@@ -1,0 +1,43 @@
+/* ========================================
+   AME TechAssist - Mobile Specific Styles
+   ======================================== */
+
+/* === MOBILE HERO === */
+.ame-hero-section {
+  padding: 50px 20px;
+}
+
+.ame-hero-title {
+  font-size: 2.2em !important;
+}
+
+.ame-hero-subtitle {
+  font-size: 1.1em !important;
+}
+
+.ame-hero-cta {
+  flex-direction: column;
+  gap: 12px;
+
+  .ame-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* === MOBILE CATEGORY BOXES === */
+.category-boxes {
+  grid-template-columns: 1fr !important;
+  padding: 0 15px;
+}
+
+/* === MOBILE NAVIGATION === */
+.d-header {
+  padding: 0 10px;
+}
+
+/* === MOBILE SEARCH === */
+.ame-search-input {
+  font-size: 14px !important;
+  padding: 14px 45px 14px 18px !important;
+}

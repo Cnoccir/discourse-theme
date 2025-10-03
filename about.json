@@ -1,0 +1,25 @@
+{
+  "name": "AME TechAssist Theme",
+  "component": true,
+  "about_url": null,
+  "license_url": null,
+  "authors": "AME Service Group",
+  "theme_version": "1.0.0",
+  "minimum_discourse_version": "3.0.0",
+  "color_schemes": {
+    "AME Dark": {
+      "primary": "f8fafc",
+      "secondary": "1a1d2e",
+      "tertiary": "7c3aed",
+      "quaternary": "06b6d4",
+      "header_background": "16213e",
+      "header_primary": "f8fafc",
+      "highlight": "7c3aed",
+      "danger": "ef4444",
+      "success": "10b981",
+      "love": "ec4899",
+      "selected": "2d1b69",
+      "hover": "1e3a8a"
+    }
+  }
+}
