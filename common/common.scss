@@ -456,11 +456,79 @@ a {
   }
 }
 
-/* === OVERRIDE MINT THEME SPECIFICS === */
-/* Override Mint's default mint color with AME purple */
-.mint-theme {
+/* ============================================
+   AGGRESSIVE MINT THEME OVERRIDES
+   Replace ALL Mint Green with AME Purple/Blue
+   ============================================ */
+
+/* Override Discourse core CSS variables */
+:root {
+  --tertiary: var(--ame-purple) !important;
+  --tertiary-low: var(--ame-purple-dark) !important;
+  --tertiary-medium: var(--ame-purple) !important;
+  --tertiary-high: var(--ame-purple-light) !important;
+  --quaternary: var(--ame-cyan) !important;
+  --quaternary-low: var(--ame-blue) !important;
+  --highlight: var(--ame-purple-light) !important;
+  --highlight-low: var(--ame-purple-dark) !important;
+  --highlight-medium: var(--ame-purple) !important;
+  --highlight-high: var(--ame-purple-light) !important;
+}
+
+/* Override Mint theme variables */
+.mint-theme,
+body {
   --d-accent: var(--ame-purple) !important;
   --d-accent-high: var(--ame-purple-light) !important;
+  --d-accent-low: var(--ame-purple-dark) !important;
+}
+
+/* Override custom-search-banner (the green welcome banner) */
+.custom-search-banner-wrap,
+.custom-search-banner {
+  background: var(--ame-gradient-primary) !important;
+  background-image: var(--ame-gradient-primary) !important;
+  border-bottom: 3px solid var(--ame-purple-light) !important;
+  box-shadow: var(--ame-glow-purple-lg) !important;
+}
+
+/* Override search input in welcome banner */
+.custom-search-banner .search-input {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: var(--ame-cyan) !important;
+    box-shadow: var(--ame-glow-cyan) !important;
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+/* Override all buttons with Mint styling */
+.btn,
+.btn-default,
+.btn-primary,
+.btn-flat,
+.widget-button {
+  &.btn-primary,
+  &[class*="btn-icon"] {
+    background: var(--ame-gradient-primary) !important;
+    background-image: var(--ame-gradient-primary) !important;
+    border: none !important;
+    color: white !important;
+    box-shadow: var(--ame-glow-purple) !important;
+
+    &:hover {
+      background: var(--ame-gradient-secondary) !important;
+      background-image: var(--ame-gradient-secondary) !important;
+      box-shadow: var(--shadow-lg) !important;
+    }
+  }
 }
 
 /* Override Mint category list styling */
@@ -474,29 +542,125 @@ a {
   }
 }
 
-/* Override Mint button styles */
+/* Override Latest filter pill */
+.nav-pills > li > a,
+.nav-pills > li.active > a {
+  &.active,
+  &:hover {
+    background: var(--ame-gradient-primary) !important;
+    background-image: var(--ame-gradient-primary) !important;
+    color: white !important;
+    box-shadow: var(--ame-glow-purple) !important;
+  }
+}
+
+/* Override tags */
 .discourse-tag,
-.badge-notification {
+.discourse-tags .discourse-tag,
+.badge-notification,
+.badge-category {
   background: var(--ame-gradient-primary) !important;
+  background-image: var(--ame-gradient-primary) !important;
   color: white !important;
-  box-shadow: var(--ame-glow-purple);
+  box-shadow: var(--ame-glow-purple) !important;
   border: none !important;
 }
 
-/* Override Mint hover effects */
+/* Override topic list hover */
 .topic-list-item:hover,
-.latest-topic-list-item:hover {
+.latest-topic-list-item:hover,
+tr.topic-list-item:hover {
   background: var(--ame-gradient-bg) !important;
-  box-shadow: inset var(--ame-glow-purple);
+  box-shadow: inset var(--ame-glow-purple) !important;
 }
 
-/* Override Mint focus states */
+/* Override badges */
+.badge-wrapper.bullet .badge-category-bg {
+  background: var(--ame-purple) !important;
+}
+
+.badge-wrapper.bullet .badge-category {
+  color: var(--ame-purple-light) !important;
+}
+
+/* Override focus states */
 input:focus,
 textarea:focus,
-select:focus {
+select:focus,
+.d-editor-input:focus {
   border-color: var(--ame-purple) !important;
   box-shadow: var(--ame-glow-purple) !important;
   outline: none !important;
+}
+
+/* Override links */
+a,
+a:visited {
+  color: var(--ame-cyan) !important;
+
+  &:hover {
+    color: var(--ame-blue-light) !important;
+    text-shadow: var(--ame-glow-cyan);
+  }
+}
+
+/* Override header background */
+.d-header {
+  background: var(--ame-dark-secondary) !important;
+  border-bottom: 2px solid var(--ame-purple) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+/* Override progress bar */
+.topic-progress,
+.timeline-container .topic-timeline {
+  .--progress-bar,
+  .timeline-scroller-content {
+    background: var(--ame-gradient-primary) !important;
+    box-shadow: var(--ame-glow-purple) !important;
+  }
+}
+
+/* Override composer */
+#reply-control {
+  background: var(--ame-dark-secondary) !important;
+  border-top: 2px solid var(--ame-purple) !important;
+
+  .btn-primary {
+    background: var(--ame-gradient-primary) !important;
+    box-shadow: var(--ame-glow-purple) !important;
+  }
+}
+
+/* Override user menu */
+.user-menu,
+.menu-panel {
+  background: var(--ame-dark-secondary) !important;
+  border: 2px solid var(--ame-purple) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Override modals */
+.modal-inner-container,
+.modal-header {
+  background: var(--ame-dark-secondary) !important;
+  border-color: var(--ame-purple) !important;
+}
+
+.modal-header {
+  background: var(--ame-gradient-primary) !important;
+  color: white !important;
+}
+
+/* Override all remaining Mint green/teal colors */
+[style*="background-color: #00a94f"],
+[style*="background-color: rgb(0, 169, 79)"],
+[style*="background: linear-gradient"],
+[class*="mint-"],
+[class*="teal-"] {
+  background: var(--ame-gradient-primary) !important;
+  background-image: var(--ame-gradient-primary) !important;
+  background-color: var(--ame-purple) !important;
 }
 
 /* === HERO SECTION WITH AME BRANDING === */
