@@ -1,7 +1,50 @@
 <script type="text/discourse-plugin" version="0.8">
   const currentRoute = api.container.lookup("router:main").currentRouteName;
 
-  // Only show hero on homepage
+  // Knowledge quotes - rotating banner
+  const knowledgeQuotes = [
+    "Put knowledge where people trip over it.",
+    "Everybody is smarter than anybody.",
+    "The only thing to do with good advice is to pass it on.",
+    "Knowledge is like money: to be of value it must circulate.",
+    "To know what you know and what you do not know, that is true knowledge.",
+    "Knowledge is a weapon. I intend to be formidably armed. 🧭"
+  ];
+
+  let currentQuoteIndex = 0;
+
+  // Knowledge Quote Banner (shown on all pages)
+  function createQuoteBanner() {
+    const quoteBannerHTML = `
+      <div class="ame-knowledge-quote-banner">
+        <div class="quote-content" id="ame-rotating-quote">
+          ${knowledgeQuotes[0]}
+        </div>
+      </div>
+    `;
+
+    const headerElement = document.querySelector('.d-header-wrap');
+    if (headerElement && !document.querySelector('.ame-knowledge-quote-banner')) {
+      headerElement.insertAdjacentHTML('afterend', quoteBannerHTML);
+
+      // Rotate quotes every 8 seconds
+      setInterval(() => {
+        currentQuoteIndex = (currentQuoteIndex + 1) % knowledgeQuotes.length;
+        const quoteElement = document.getElementById('ame-rotating-quote');
+        if (quoteElement) {
+          quoteElement.style.opacity = '0';
+          setTimeout(() => {
+            quoteElement.textContent = knowledgeQuotes[currentQuoteIndex];
+            quoteElement.style.opacity = '1';
+          }, 300);
+        }
+      }, 8000);
+    }
+  }
+
+  createQuoteBanner();
+
+  // Hero section (only on homepage)
   if (currentRoute === "discovery.categories" || currentRoute === "discovery.latest") {
     const heroHTML = `
       <div class="ame-hero-section">
@@ -41,10 +84,10 @@
       </div>
     `;
 
-    // Insert hero after header
-    const headerElement = document.querySelector('.d-header-wrap');
-    if (headerElement && !document.querySelector('.ame-hero-section')) {
-      headerElement.insertAdjacentHTML('afterend', heroHTML);
+    // Insert hero after quote banner
+    const quoteBanner = document.querySelector('.ame-knowledge-quote-banner');
+    if (quoteBanner && !document.querySelector('.ame-hero-section')) {
+      quoteBanner.insertAdjacentHTML('afterend', heroHTML);
 
       // Add search functionality
       const searchInput = document.getElementById('ame-hero-search-input');

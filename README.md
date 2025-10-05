@@ -1,14 +1,16 @@
 # AME TechAssist - Discourse Theme Component
 
-**Dark, modern theme component for AME TechAssist building automation community**
+**Clean, modern theme component for AME TechAssist building automation community**
 
 ## 🎨 Features
 
-- Dark purple/blue gradient design
-- Professional hero section with search
-- Mobile responsive
-- Safe component architecture (won't break on Mint theme updates)
-- Tech-focused aesthetic
+- ✨ **Clean Modern Design** - No excessive glow effects or gradients
+- 💬 **Knowledge Quote Banner** - Rotating inspirational quotes about knowledge sharing
+- 🎨 **3 Color Schemes** - AME Dark, AME Light, AME Professional
+- 🔍 **Professional Hero Section** - Eye-catching homepage with search functionality
+- 📱 **Mobile Responsive** - Optimized for all devices
+- 🛡️ **Safe Component Architecture** - Won't break on Mint theme updates
+- 🎯 **Tech-Focused Aesthetic** - Perfect for building automation community
 
 ## 📦 Installation
 
@@ -44,11 +46,14 @@
 
 ## 🎯 What's Included
 
-- **Dark color scheme** - Purple (#7c3aed) and blue (#3b82f6) accents
-- **Hero landing section** - Search bar and CTAs
-- **Category styling** - Modern card design with gradients
-- **Mobile optimization** - Responsive design
-- **Custom scrollbars** - Branded purple/blue gradients
+- **3 Color Schemes** - AME Dark (default), AME Light, AME Professional
+- **Knowledge Quote Banner** - Rotating quotes that inspire knowledge sharing
+- **Hero Landing Section** - Search bar and CTAs on homepage
+- **Clean Category Styling** - Modern card design with subtle accents
+- **Mobile Optimization** - Fully responsive design
+- **Custom Scrollbars** - Branded purple scrollbars (no glow)
+- **Professional Typography** - Clean, readable fonts
+- **Streamlined Navigation** - Easy-to-use category structure
 
 ## 🔧 Customization
 
@@ -58,17 +63,39 @@ Edit `common/common.scss`:
 
 ```scss
 :root {
-  --ame-purple: #YOUR_COLOR;
+  --ame-purple: #7c3aed;  // Your primary brand color
+  --ame-blue: #3b82f6;    // Your secondary accent color
 }
+```
+
+### Customize Knowledge Quotes
+
+Edit `common/header.html` around line 5:
+
+```javascript
+const knowledgeQuotes = [
+  "Put knowledge where people trip over it.",
+  "Add your own custom quotes here.",
+];
+```
+
+### Change Quote Rotation Speed
+
+Edit `common/header.html` (default is 8000ms = 8 seconds):
+
+```javascript
+setInterval(() => {
+  // ...
+}, 8000); // Change this number
 ```
 
 ### Hide Hero Section
 
-Component Settings → Toggle "Show hero on homepage" OFF
+Edit `common/header.html` and comment out lines 47-102
 
 ### Modify Hero Text
 
-Edit `common/header.html` - change text in `<h1>` and `<p>` tags
+Edit `common/header.html` - change text in the hero section HTML
 
 ## 📁 File Structure
 
@@ -94,25 +121,47 @@ ame-techassist-theme/
 **If uploaded as ZIP:**
 - Re-upload new version to update
 
-## 🎨 Color Palette
+## 🎨 Color Palettes
 
+### AME Dark (Default)
 ```
-Dark Backgrounds:
-- Primary: #1a1d2e
-- Secondary: #16213e
-- Tertiary: #0f1419
+Backgrounds:
+- Primary: #0f1419 (Very dark blue-gray)
+- Secondary: #1a1d2e (Dark blue-gray)
+- Tertiary: #16213e (Medium dark blue)
 
-Accent Colors:
+Accents:
 - Purple: #7c3aed
 - Blue: #3b82f6
 - Cyan: #06b6d4
-- Green: #10b981 (success)
-- Orange: #f59e0b (warning)
+- Success: #10b981
+- Warning: #f59e0b
+- Danger: #ef4444
 
 Text:
-- Primary: #f8fafc
-- Secondary: #cbd5e1
-- Muted: #94a3b8
+- Primary: #f8fafc (Almost white)
+- Secondary: #cbd5e1 (Light gray)
+- Muted: #94a3b8 (Medium gray)
+```
+
+### AME Light
+```
+Backgrounds:
+- Primary: #1a1d2e (Text color)
+- Secondary: #ffffff (White background)
+
+Accents: Same as Dark theme
+```
+
+### AME Professional
+```
+Backgrounds:
+- Primary: #e5e7eb
+- Secondary: #1e293b (Dark slate)
+
+Accents:
+- Purple: #6366f1 (Indigo)
+- Cyan: #0891b2 (Teal)
 ```
 
 ## 🆘 Troubleshooting
@@ -137,9 +186,9 @@ MIT License - Copyright (c) 2025 AME Service Group
 
 ## 🔗 Related Documentation
 
-- Full Setup Guide: See `AME-TechAssist-Complete-Setup-Guide.md`
-- Category Setup: See `AME-Category-Setup-Script.md`
-- Installation Guide: See `INSTALL-THEME-COMPONENT.md`
+- **Installation Guide**: See `AME-TechAssist-Theme-Installation-Guide.md`
+- **Category Setup**: See `AME-Category-Structure.md`
+- **Quick Start**: See `QUICK-START.md`
 
 ## 💬 Support
 

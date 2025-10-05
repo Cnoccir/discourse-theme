@@ -9,17 +9,45 @@
   "color_schemes": {
     "AME Dark": {
       "primary": "f8fafc",
-      "secondary": "1a1d2e",
+      "secondary": "0f1419",
       "tertiary": "7c3aed",
       "quaternary": "06b6d4",
-      "header_background": "16213e",
-      "header_primary": "f8fafc",
-      "highlight": "7c3aed",
+      "header_background": "1a1d2e",
+      "header_primary": "ffffff",
+      "highlight": "a78bfa",
       "danger": "ef4444",
       "success": "10b981",
       "love": "ec4899",
-      "selected": "2d1b69",
-      "hover": "1e3a8a"
+      "selected": "5b21b6",
+      "hover": "6d28d9"
+    },
+    "AME Light": {
+      "primary": "1a1d2e",
+      "secondary": "f8fafc",
+      "tertiary": "7c3aed",
+      "quaternary": "06b6d4",
+      "header_background": "ffffff",
+      "header_primary": "1a1d2e",
+      "highlight": "a78bfa",
+      "danger": "dc2626",
+      "success": "059669",
+      "love": "db2777",
+      "selected": "e9d5ff",
+      "hover": "ddd6fe"
+    },
+    "AME Professional": {
+      "primary": "f9fafb",
+      "secondary": "1e293b",
+      "tertiary": "6366f1",
+      "quaternary": "0891b2",
+      "header_background": "111827",
+      "header_primary": "f9fafb",
+      "highlight": "818cf8",
+      "danger": "dc2626",
+      "success": "059669",
+      "love": "db2777",
+      "selected": "3730a3",
+      "hover": "4338ca"
     }
   }
 }

@@ -1,32 +1,66 @@
 /* ========================================
    AME TechAssist - Theme Component
-   Overrides for Mint Theme
-   Dark Tech-Focused Design
+   Mint Theme Override with AME Branding
+   Purple/Blue Glows & Gradients
    ======================================== */
 
-/* === CUSTOM CSS VARIABLES === */
+/* === AME BRAND VARIABLES === */
 :root {
-  /* AME Brand Colors - Override Mint */
-  --ame-dark-primary: #1a1d2e;
-  --ame-dark-secondary: #16213e;
-  --ame-dark-tertiary: #0f1419;
+  /* AME Brand Colors */
+  --ame-dark-primary: #0f1419;
+  --ame-dark-secondary: #1a1d2e;
+  --ame-dark-tertiary: #16213e;
 
+  /* AME Purple Palette */
   --ame-purple: #7c3aed;
   --ame-purple-hover: #6d28d9;
+  --ame-purple-light: #a78bfa;
+  --ame-purple-dark: #5b21b6;
+
+  /* AME Blue Palette */
   --ame-blue: #3b82f6;
+  --ame-blue-hover: #2563eb;
+  --ame-blue-light: #60a5fa;
+
+  /* Additional Accents */
   --ame-cyan: #06b6d4;
   --ame-success: #10b981;
   --ame-warning: #f59e0b;
+  --ame-danger: #ef4444;
 
   /* Text */
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
 
-  /* Override Mint Variables */
-  --mint-border-radius: 12px;
-  --mint-hover-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
-  --mint-color-mint: var(--ame-purple);
+  /* Spacing & Borders */
+  --border-radius: 12px;
+  --border-radius-lg: 16px;
+  --border-color: rgba(124, 58, 237, 0.2);
+  --border-color-hover: rgba(124, 58, 237, 0.4);
+
+  /* AME Branded Glows */
+  --ame-glow-purple: 0 0 20px rgba(124, 58, 237, 0.4);
+  --ame-glow-purple-lg: 0 0 30px rgba(124, 58, 237, 0.5), 0 0 60px rgba(124, 58, 237, 0.3);
+  --ame-glow-blue: 0 0 20px rgba(59, 130, 246, 0.4);
+  --ame-glow-cyan: 0 0 20px rgba(6, 182, 212, 0.4);
+
+  /* AME Branded Gradients */
+  --ame-gradient-primary: linear-gradient(135deg, var(--ame-purple), var(--ame-blue));
+  --ame-gradient-secondary: linear-gradient(135deg, var(--ame-purple-dark), var(--ame-purple));
+  --ame-gradient-accent: linear-gradient(135deg, var(--ame-cyan), var(--ame-blue));
+  --ame-gradient-bg: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(59, 130, 246, 0.08));
+
+  /* Shadows with Glow */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4), var(--ame-glow-purple);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5), var(--ame-glow-purple-lg);
+
+  /* Override Mint Variables with AME Branding */
+  --mint-border-radius: var(--border-radius-lg);
+  --mint-hover-shadow: var(--shadow-md);
+  --mint-color-mint: var(--ame-purple) !important;
+  --mint-gradient: var(--ame-gradient-primary) !important;
 }
 
 /* === GLOBAL DARK BACKGROUND === */
@@ -35,23 +69,75 @@ body {
   color: var(--text-primary);
 }
 
+/* === KNOWLEDGE QUOTE BANNER === */
+.ame-knowledge-quote-banner {
+  background: var(--ame-gradient-primary);
+  border-bottom: 2px solid var(--ame-purple);
+  padding: 16px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--ame-glow-purple);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .quote-content {
+    color: var(--text-primary);
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+    max-width: 900px;
+    margin: 0 auto;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+  }
+}
+
 /* === HEADER STYLING === */
 .d-header {
   background: var(--ame-dark-secondary);
-  border-bottom: 1px solid rgba(124, 58, 237, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid var(--ame-purple);
+  box-shadow: var(--shadow-md);
 }
 
 .d-header-icons .icon {
   color: var(--text-secondary);
+  transition: all 0.3s ease;
 
   &:hover {
-    color: var(--ame-purple);
+    color: var(--ame-purple-light);
+    filter: drop-shadow(var(--ame-glow-purple));
+    transform: scale(1.1);
   }
 }
 
 .d-header .title a {
   color: var(--text-primary);
+  font-weight: 700;
+  text-shadow: var(--ame-glow-purple);
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: var(--ame-purple-light);
+    text-shadow: var(--ame-glow-purple-lg);
+  }
 }
 
 /* === REMOVE MINT DECORATIVE SHAPES === */
@@ -67,35 +153,68 @@ body:not(.navigation-categories, .navigation-topics) #main-outlet {
   border-top-color: var(--ame-purple);
 }
 
-/* === CATEGORY BOXES (SIMPLIFIED & MODERN) === */
+/* === OVERRIDE MINT CATEGORY BOXES WITH AME BRANDING === */
 .category-boxes {
   grid-gap: 24px;
   margin-top: 30px;
 
   .category-box {
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(59, 130, 246, 0.05));
-    border: 1px solid rgba(124, 58, 237, 0.2);
-    border-top: 4px solid var(--ame-purple);
-    border-radius: 16px;
-    transition: all 0.3s ease;
+    background: var(--ame-gradient-bg);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-lg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--ame-gradient-primary);
+      box-shadow: var(--ame-glow-purple);
+    }
 
     &:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px) scale(1.02);
       border-color: var(--ame-purple);
-      box-shadow: 0 12px 40px rgba(124, 58, 237, 0.3);
-      background: linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(59, 130, 246, 0.1));
+      box-shadow: var(--shadow-lg);
+      background: var(--ame-gradient-bg);
+
+      &::before {
+        width: 6px;
+        box-shadow: var(--ame-glow-purple-lg);
+      }
+
+      .category-box-inner {
+        .category-details h3,
+        .category-details h4 {
+          color: var(--ame-purple-light);
+          text-shadow: var(--ame-glow-purple);
+        }
+      }
     }
 
     .category-box-inner {
       background: transparent;
+      padding: 24px;
+      padding-left: 28px;
 
       .category-details {
         h3, h4 {
           color: var(--text-primary);
+          font-weight: 700;
+          margin-bottom: 10px;
+          transition: all 0.3s ease;
         }
 
         .category-description {
           color: var(--text-secondary);
+          font-size: 14px;
+          line-height: 1.7;
         }
       }
     }
@@ -129,62 +248,81 @@ body:not(.navigation-categories, .navigation-topics) #main-outlet {
   color: var(--text-muted);
 }
 
-/* === BUTTONS === */
+/* === BUTTONS WITH AME GRADIENT & GLOW === */
 .btn-primary,
 #create-topic {
-  background: linear-gradient(135deg, var(--ame-purple), var(--ame-blue));
+  background: var(--ame-gradient-primary);
   border: none;
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.3s ease;
+  border-radius: var(--border-radius);
+  box-shadow: var(--ame-glow-purple);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--mint-hover-shadow);
+    background: var(--ame-gradient-secondary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: var(--ame-glow-purple);
   }
 }
 
 .btn-default {
-  background: rgba(124, 58, 237, 0.1);
-  border-color: rgba(124, 58, 237, 0.3);
+  background: transparent;
+  border: 2px solid var(--ame-purple);
   color: var(--text-primary);
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  box-shadow: inset var(--ame-glow-purple);
 
   &:hover {
-    background: var(--ame-purple);
-    border-color: var(--ame-purple);
+    background: var(--ame-gradient-primary);
+    border-color: var(--ame-purple-light);
     color: white;
+    box-shadow: var(--ame-glow-purple-lg);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 }
 
 /* === SEARCH === */
 .search-menu {
   background: var(--ame-dark-secondary);
-  border: 1px solid rgba(124, 58, 237, 0.3);
-  border-radius: 12px;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--ame-purple);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
 
   .results {
     color: var(--text-primary);
   }
 
   .search-result-topic:hover {
-    background: rgba(124, 58, 237, 0.1);
+    background: var(--ame-gradient-bg);
+    box-shadow: inset var(--ame-glow-purple);
   }
 }
 
 .custom-search-banner-wrap {
-  background: linear-gradient(135deg, var(--ame-purple), var(--ame-blue));
-  border-radius: var(--mint-border-radius);
+  background: var(--ame-gradient-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--ame-glow-purple-lg);
 }
 
 /* === POST STREAM === */
 .topic-post {
-  background: rgba(22, 33, 62, 0.3);
-  border: 1px solid rgba(124, 58, 237, 0.1);
-  border-radius: 12px;
+  background: var(--ame-gradient-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  transition: all 0.3s ease;
 
   &:hover {
-    border-color: rgba(124, 58, 237, 0.3);
+    border-color: var(--ame-purple);
+    box-shadow: var(--ame-glow-purple);
+    transform: translateX(4px);
   }
 
   article.boxed {
@@ -253,58 +391,258 @@ textarea,
 
 /* === BADGES (GAMIFICATION) === */
 .badge-card {
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(6, 182, 212, 0.1));
-  border: 1px solid rgba(124, 58, 237, 0.2);
-  border-radius: 10px;
+  background: var(--ame-gradient-bg);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
   transition: all 0.3s ease;
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: var(--mint-hover-shadow);
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--ame-purple-light);
   }
 }
 
 /* === NAV PILLS === */
 .nav-pills > li a {
   color: var(--text-secondary);
+  transition: all 0.3s ease;
 
   &:hover {
-    color: var(--ame-purple);
+    color: var(--ame-purple-light);
     border-color: var(--ame-purple);
+    box-shadow: inset var(--ame-glow-purple);
   }
 
   &.active {
-    background: var(--ame-purple);
+    background: var(--ame-gradient-primary);
     color: white;
+    box-shadow: var(--ame-glow-purple);
+    border: none;
   }
 }
 
 /* === LINKS === */
 a {
   color: var(--ame-cyan);
+  transition: all 0.2s ease;
 
   &:hover {
-    color: var(--ame-blue);
+    color: var(--ame-blue-light);
+    text-shadow: var(--ame-glow-cyan);
   }
 }
 
 /* === SELECT MENUS === */
 .select-kit.dropdown-select-box .dropdown-select-box-header {
-  background: rgba(124, 58, 237, 0.1);
-  border-color: rgba(124, 58, 237, 0.3);
+  background: var(--ame-gradient-bg);
+  border: 2px solid var(--border-color);
   color: var(--text-primary);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--ame-purple);
+    box-shadow: var(--ame-glow-purple);
+  }
 }
 
 /* === ADMIN PANEL COMPATIBILITY === */
 .admin-controls,
 .admin-container {
   .nav-pills > li a.active {
-    background: var(--ame-purple);
+    background: var(--ame-gradient-primary);
     color: white;
+    box-shadow: var(--ame-glow-purple);
   }
 }
 
-/* === SCROLLBAR === */
+/* === OVERRIDE MINT THEME SPECIFICS === */
+/* Override Mint's default mint color with AME purple */
+.mint-theme {
+  --d-accent: var(--ame-purple) !important;
+  --d-accent-high: var(--ame-purple-light) !important;
+}
+
+/* Override Mint category list styling */
+.category-list .category {
+  border-left: 4px solid var(--ame-purple) !important;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: var(--ame-glow-purple) !important;
+    transform: translateX(8px);
+  }
+}
+
+/* Override Mint button styles */
+.discourse-tag,
+.badge-notification {
+  background: var(--ame-gradient-primary) !important;
+  color: white !important;
+  box-shadow: var(--ame-glow-purple);
+  border: none !important;
+}
+
+/* Override Mint hover effects */
+.topic-list-item:hover,
+.latest-topic-list-item:hover {
+  background: var(--ame-gradient-bg) !important;
+  box-shadow: inset var(--ame-glow-purple);
+}
+
+/* Override Mint focus states */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--ame-purple) !important;
+  box-shadow: var(--ame-glow-purple) !important;
+  outline: none !important;
+}
+
+/* === HERO SECTION WITH AME BRANDING === */
+.ame-hero-section {
+  background: var(--ame-gradient-primary);
+  padding: 80px 20px;
+  text-align: center;
+  border-bottom: 3px solid var(--ame-purple-light);
+  box-shadow: var(--ame-glow-purple-lg);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+  }
+
+  .ame-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ame-hero-title {
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    text-shadow: var(--ame-glow-purple-lg);
+    letter-spacing: -1px;
+
+    .highlight {
+      background: var(--ame-gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(var(--ame-glow-cyan));
+    }
+  }
+
+  .ame-hero-subtitle {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 40px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    font-weight: 500;
+  }
+
+  .ame-hero-search {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto 32px;
+
+    .ame-search-input {
+      width: 100%;
+      padding: 18px 56px 18px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--border-radius-lg);
+      color: var(--text-primary);
+      font-size: 16px;
+      transition: all 0.3s ease;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      &:focus {
+        outline: none;
+        border-color: var(--ame-cyan);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: var(--ame-glow-cyan);
+      }
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  .ame-hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .ame-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: var(--border-radius-lg);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 16px;
+
+    &.ame-btn-primary {
+      background: white;
+      color: var(--ame-purple-dark);
+      border: none;
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+
+      &:hover {
+        background: var(--ame-cyan);
+        color: white;
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: var(--ame-glow-cyan), 0 8px 24px rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    &.ame-btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+
+      &:hover {
+        border-color: white;
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+/* === SCROLLBAR WITH AME GRADIENT === */
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
@@ -312,14 +650,17 @@ a {
 
 ::-webkit-scrollbar-track {
   background: var(--ame-dark-tertiary);
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--ame-purple), var(--ame-blue));
+  background: var(--ame-gradient-primary);
   border-radius: 6px;
+  box-shadow: var(--ame-glow-purple);
 
   &:hover {
-    background: linear-gradient(180deg, var(--ame-purple-hover), var(--ame-blue));
+    background: var(--ame-gradient-accent);
+    box-shadow: var(--ame-glow-cyan);
   }
 }
 
@@ -327,5 +668,29 @@ a {
 @media (max-width: 768px) {
   .category-boxes {
     grid-template-columns: 1fr;
+  }
+
+  .ame-hero-section {
+    padding: 40px 16px;
+
+    .ame-hero-title {
+      font-size: 36px;
+    }
+
+    .ame-hero-subtitle {
+      font-size: 16px;
+    }
+
+    .ame-hero-cta {
+      flex-direction: column;
+    }
+  }
+
+  .ame-knowledge-quote-banner {
+    padding: 10px 16px;
+
+    .quote-content {
+      font-size: 12px;
+    }
   }
 }
