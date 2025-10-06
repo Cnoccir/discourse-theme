@@ -1,0 +1,28 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Node modules (if using any build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+*.log
+.cache/
+dist/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

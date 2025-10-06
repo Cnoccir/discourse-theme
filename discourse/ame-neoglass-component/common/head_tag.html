@@ -1,0 +1,34 @@
+<!-- AME Neo-Glass Theme Component -->
+<!-- Preload fonts and assets for better performance -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Optional: Add custom font if needed -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"> -->
+
+<style>
+  /* Preload animation to prevent FOUC */
+  body.ame-neoglass-theme {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+  }
+
+  body.ame-neoglass-theme.loaded {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  // Mark body as loaded after DOM ready
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      document.body.classList.add('loaded');
+    }, 100);
+  });
+</script>
+
+<!-- Meta tags for better mobile experience -->
+<meta name="theme-color" content="#00508C">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">

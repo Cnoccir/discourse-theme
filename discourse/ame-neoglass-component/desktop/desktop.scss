@@ -1,0 +1,163 @@
+/* ========================================
+   AME Neo-Glass - Desktop Specific Styles
+   ======================================== */
+
+/* Desktop-specific enhancements for larger screens */
+@media (min-width: 1024px) {
+  /* Enhanced glassmorphism on desktop */
+  .neo-glass-card {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Category grid layout - 2x2 on desktop */
+  .category-boxes-with-topics,
+  .category-boxes.with-subcategories {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+
+    .category-box,
+    .category {
+      width: 100%;
+    }
+  }
+
+  /* Larger hero text on desktop */
+  .categories-and-latest .navigation-container::before {
+    font-size: 3.5rem;
+    margin: 4rem auto 1.5rem;
+  }
+
+  .categories-and-latest .navigation-container::after {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  /* Enhanced hover effects for desktop */
+  .category-box:hover,
+  .category-box-inner:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  /* Sidebar glassmorphism */
+  .sidebar-wrapper {
+    background: rgba(240, 244, 248, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Header transparency on desktop */
+  .d-header {
+    background: rgba(240, 244, 248, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+  }
+
+  /* Login page centered on desktop */
+  body.static-login .login-welcome,
+  body.static-signup .create-account {
+    max-width: 550px;
+    margin: 10vh auto;
+    padding: 3.5rem;
+  }
+
+  /* Topic list enhancements */
+  .topic-list {
+    tr {
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateX(5px);
+        background: rgba(0, 191, 255, 0.08);
+      }
+    }
+  }
+
+  /* Enhanced button hover effects */
+  .btn-primary:hover,
+  #create-topic:hover {
+    transform: translateY(-3px) scale(1.05);
+  }
+
+  /* Floating animation for inspiration block */
+  .ame-inspiration-block {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Enhanced glow effects on desktop */
+  .category-box:nth-child(4):hover {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow:
+        0 12px 40px 0 var(--ame-cyber-teal-glow),
+        0 0 30px 0 var(--ame-cyber-teal-glow);
+    }
+    50% {
+      box-shadow:
+        0 12px 40px 0 var(--ame-cyber-teal-glow),
+        0 0 50px 5px var(--ame-cyber-teal-glow);
+    }
+  }
+
+  /* Desktop search bar enhancement */
+  .search-menu .search-input {
+    border-radius: 50px;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(0, 191, 255, 0.3);
+    transition: all 0.3s ease;
+
+    &:focus-within {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--ame-cyber-teal);
+      box-shadow: 0 0 20px var(--ame-cyber-teal-glow);
+    }
+  }
+
+  /* Desktop user menu glassmorphism */
+  .user-menu,
+  .menu-panel {
+    background: rgba(240, 244, 248, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 80, 140, 0.2);
+  }
+
+  /* Parallax effect for background */
+  body:not(.static-login) {
+    .categories-and-latest::before,
+    .category-boxes-with-topics::before {
+      background-attachment: fixed;
+    }
+  }
+}
+
+/* Ultra-wide desktop (1440px+) */
+@media (min-width: 1440px) {
+  .category-boxes-with-topics,
+  .category-boxes.with-subcategories {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ame-inspiration-block {
+    max-width: 900px;
+  }
+}

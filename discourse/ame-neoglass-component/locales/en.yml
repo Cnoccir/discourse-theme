@@ -1,0 +1,29 @@
+en:
+  theme_metadata:
+    description: "AME Neo-Glass Theme Component - Next-generation glassmorphic design for technical knowledge sharing"
+
+  ame_neoglass:
+    hero:
+      title: "TRANSFERRING KNOWLEDGE TO BUILD OUR COLLECTIVE FUTURE"
+      subtitle: "Together We Know More"
+
+    categories:
+      knowledge_base:
+        title: "Knowledge Base"
+        description: "Access Vendor Manuals, Equipment Specs & Technical Docs"
+      tech_community:
+        title: "Tech Community"
+        description: "Connect, Ask Questions & Share Expertise"
+      howto_troubleshooting:
+        title: "How-To & Troubleshooting"
+        description: "Find Guides, Tutorials & Fixes"
+      ai_assistant:
+        title: "AI Assistant (AME-Bot)"
+        description: "Get Instant Answers from AI"
+
+    inspiration:
+      quote_1: "Alone we can do so little; together we can do so much."
+      quote_2: "Put knowledge where people trip over it."
+      quote_3: "Everybody is smarter than anybody."
+      quote_4: "Knowledge is like money: to be of value it must circulate."
+      quote_5: "Together we know more."

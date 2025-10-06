@@ -1,0 +1,72 @@
+# Sensitive Files - NEVER COMMIT
+*_Keys.txt
+*_keys.txt
+*accessKeys.csv
+client_secret*.json
+*.pem
+*.key
+.env
+.env.*
+credentials.json
+
+# PDFs and Documentation
+*.pdf
+
+# Archives
+.archive/
+archives/
+
+# IDE and Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.claude/
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+pnpm-lock.yaml
+
+# Build artifacts
+dist/
+build/
+*.log
+.cache/
+tmp/
+temp/
+
+# Other Projects (keep only theme components)
+../BQL_Query_Builder/
+../TridumPwdCracker/
+../ame-hvac-report/
+../ame-pm-tool/
+../ame-site-sync-local/
+../Data/
+../docling-serve/
+../fsc_offline/
+../gdrive_scripts/
+../learn-ame-techassist-server/
+../pybog-cnoccir/
+../pybog/
+../tridiumMCP/
+../tridium_exports/
+../ame-techassist/
+../docling-n8n/
+../pdf_rag/
+../techassist-nexus-ai/
+
+# Keep only specific Discourse theme folders
+# Allow:
+# - ame-neoglass-component/
+# - ame-techassist-theme/
+# - discourse-mint-theme/
+# - horizon/
+# - public/ (for images)

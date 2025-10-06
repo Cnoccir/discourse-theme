@@ -1,0 +1,39 @@
+enable_neo_glass_homepage:
+  type: bool
+  default: true
+  description: "Enable Neo-Glassmorphism homepage with hero section and category cards"
+
+hero_background_image:
+  type: string
+  default: "/Background-Lgin-Landing.png"
+  description: "URL or path to the hero background image"
+
+login_background_image:
+  type: string
+  default: "/Background-Lgin-Landing.png"
+  description: "URL or path to the login page background image"
+
+enable_inspiration_block:
+  type: bool
+  default: true
+  description: "Enable rotating inspiration quotes block on homepage"
+
+hero_title:
+  type: string
+  default: "TRANSFERRING KNOWLEDGE TO BUILD OUR COLLECTIVE FUTURE"
+  description: "Main hero section title"
+
+hero_subtitle:
+  type: string
+  default: "Together We Know More"
+  description: "Hero section subtitle/slogan"
+
+glass_opacity:
+  type: float
+  default: 0.15
+  description: "Opacity for glassmorphic elements (0.1 - 0.3 recommended)"
+
+glass_blur:
+  type: integer
+  default: 15
+  description: "Blur amount in pixels for glassmorphic effect (10-20 recommended)"
