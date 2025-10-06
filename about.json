@@ -7,47 +7,33 @@
   "theme_version": "1.0.0",
   "minimum_discourse_version": "3.0.0",
   "color_schemes": {
-    "AME Dark": {
+    "AME Light Professional": {
+      "primary": "031c40",
+      "secondary": "ffffff",
+      "tertiary": "321c70",
+      "quaternary": "5c8eff",
+      "header_background": "ffffff",
+      "header_primary": "031c40",
+      "highlight": "8B5CF6",
+      "danger": "dc2626",
+      "success": "059669",
+      "love": "db2777",
+      "selected": "f3e8ff",
+      "hover": "e9d5ff"
+    },
+    "AME Dark Professional": {
       "primary": "f8fafc",
-      "secondary": "0f1419",
-      "tertiary": "7c3aed",
-      "quaternary": "06b6d4",
-      "header_background": "1a1d2e",
+      "secondary": "1a1d2e",
+      "tertiary": "8B5CF6",
+      "quaternary": "5c8eff",
+      "header_background": "0f1419",
       "header_primary": "ffffff",
       "highlight": "a78bfa",
       "danger": "ef4444",
       "success": "10b981",
       "love": "ec4899",
-      "selected": "5b21b6",
-      "hover": "6d28d9"
-    },
-    "AME Light": {
-      "primary": "1a1d2e",
-      "secondary": "f8fafc",
-      "tertiary": "7c3aed",
-      "quaternary": "06b6d4",
-      "header_background": "ffffff",
-      "header_primary": "1a1d2e",
-      "highlight": "a78bfa",
-      "danger": "dc2626",
-      "success": "059669",
-      "love": "db2777",
-      "selected": "e9d5ff",
-      "hover": "ddd6fe"
-    },
-    "AME Professional": {
-      "primary": "f9fafb",
-      "secondary": "1e293b",
-      "tertiary": "6366f1",
-      "quaternary": "0891b2",
-      "header_background": "111827",
-      "header_primary": "f9fafb",
-      "highlight": "818cf8",
-      "danger": "dc2626",
-      "success": "059669",
-      "love": "db2777",
-      "selected": "3730a3",
-      "hover": "4338ca"
+      "selected": "321c70",
+      "hover": "5f42bb"
     }
   }
 }
