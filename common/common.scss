@@ -56,9 +56,107 @@ body,
   background-image: none !important;
 }
 
-/* === REMOVE HERO SECTION === */
+/* === CLEAN PROFESSIONAL HERO SECTION === */
 .ame-hero-section {
-  display: none !important;
+  background: #F9FAFB;
+  border-left: 4px solid #1e3a8a;
+  padding: 3rem 2rem;
+  margin: 0 0 2rem 0;
+}
+
+.ame-hero-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ame-hero-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+
+  .highlight {
+    color: #1e3a8a;
+    font-weight: 700;
+  }
+}
+
+.ame-hero-subtitle {
+  font-size: 16px;
+  color: #4B5563;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.ame-hero-search {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  .ame-search-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px 16px 12px 44px;
+    border: 1px solid #D1D5DB;
+    border-radius: 0;
+    font-size: 15px;
+    background: #ffffff;
+
+    &:focus {
+      outline: none;
+      border-color: #1e3a8a;
+      box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.1);
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+    pointer-events: none;
+  }
+}
+
+.ame-hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ame-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all 0.2s ease;
+  border: none;
+
+  &.ame-btn-primary {
+    background: #1e3a8a;
+    color: white;
+
+    &:hover {
+      background: #1e40af;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &.ame-btn-secondary {
+    background: transparent;
+    color: #1e3a8a;
+    border: 1px solid #1e3a8a;
+
+    &:hover {
+      background: #1e3a8a;
+      color: white;
+    }
+  }
 }
 
 /* === PROFESSIONAL KNOWLEDGE QUOTE BANNER === */
@@ -111,30 +209,31 @@ body,
   padding: 0 !important;
 }
 
-/* === WELCOME/SEARCH BANNER - FIXED === */
+/* === WELCOME/SEARCH BANNER - CLEAN === */
 .custom-search-banner-wrap,
 .custom-search-banner {
-  background: #ffffff !important;
+  background: #F9FAFB !important;
   background-image: none !important;
-  background-color: #ffffff !important;
-  border: 1px solid #E5E7EB !important;
-  border-left: none !important;
-  border-top: 3px solid #1e3a8a !important;
+  background-color: #F9FAFB !important;
+  border: none !important;
+  border-left: 4px solid #1e3a8a !important;
   border-radius: 0 !important;
-  padding: 2rem !important;
+  padding: 2.5rem 2rem !important;
   box-shadow: none !important;
-  margin: 1.5rem 0 !important;
+  margin: 0 0 2rem 0 !important;
 
   h1, h2 {
     color: #000000 !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     margin-bottom: 0.5rem !important;
-    font-size: 18px !important;
+    font-size: 24px !important;
+    letter-spacing: -0.5px !important;
   }
 
   p {
-    color: #6B7280 !important;
-    font-size: 14px !important;
+    color: #4B5563 !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
   }
 }
 
