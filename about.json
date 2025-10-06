@@ -7,33 +7,19 @@
   "theme_version": "1.0.0",
   "minimum_discourse_version": "3.0.0",
   "color_schemes": {
-    "AME Light Professional": {
-      "primary": "031c40",
+    "AME Clean": {
+      "primary": "111827",
       "secondary": "ffffff",
-      "tertiary": "321c70",
-      "quaternary": "5c8eff",
+      "tertiary": "8B5CF6",
+      "quaternary": "3B82F6",
       "header_background": "ffffff",
-      "header_primary": "031c40",
+      "header_primary": "111827",
       "highlight": "8B5CF6",
       "danger": "dc2626",
       "success": "059669",
       "love": "db2777",
-      "selected": "f3e8ff",
-      "hover": "e9d5ff"
-    },
-    "AME Dark Professional": {
-      "primary": "f8fafc",
-      "secondary": "1a1d2e",
-      "tertiary": "8B5CF6",
-      "quaternary": "5c8eff",
-      "header_background": "0f1419",
-      "header_primary": "ffffff",
-      "highlight": "a78bfa",
-      "danger": "ef4444",
-      "success": "10b981",
-      "love": "ec4899",
-      "selected": "321c70",
-      "hover": "5f42bb"
+      "selected": "f3f4f6",
+      "hover": "e5e7eb"
     }
   }
 }
