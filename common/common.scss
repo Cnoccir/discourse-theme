@@ -1,20 +1,16 @@
 /* ========================================
-   AME TechAssist - Technical Forum
-   Professional with Strong Brand Identity
-   Purple #321c70 + Clean Design
+   AME TechAssist - Technical Knowledge Forum
+   Building Automation Systems
+   Professional | Industrial | Technical
+   Navy #1a237e + Black + Red Accents
    ======================================== */
 
-/* === AME BRAND COLORS === */
+/* === AME BRAND COLORS (FROM LOGO) === */
 :root {
-  /* AME Purple (Primary Brand) */
-  --ame-purple-primary: #321c70;
-  --ame-purple-bright: #8B5CF6;
-  --ame-purple-light: #a78bfa;
-  --ame-purple-dark: #25165a;
-
-  /* Secondary Colors */
-  --ame-blue: #3B82F6;
-  --ame-teal: #14B8A6;
+  /* AME Primary Colors (from logo) */
+  --ame-black: #000000;           /* Buildings, primary text */
+  --ame-navy: #1a237e;            /* "Nordomatic Group" tagline */
+  --ame-red: #E53935;             /* Measurement marks, critical accents */
 
   /* Neutrals */
   --gray-50: #F9FAFB;
@@ -35,14 +31,14 @@
   --border-color: var(--gray-200);
 }
 
-/* === OVERRIDE DISCOURSE CORE VARIABLES === */
+/* === MINIMAL DISCOURSE OVERRIDES === */
 :root {
-  --tertiary: var(--ame-purple-bright) !important;
-  --tertiary-low: var(--ame-purple-dark) !important;
-  --tertiary-medium: var(--ame-purple-primary) !important;
-  --tertiary-high: var(--ame-purple-light) !important;
-  --quaternary: var(--ame-blue) !important;
-  --highlight: var(--ame-purple-light) !important;
+  --tertiary: var(--ame-navy) !important;
+  --tertiary-low: #e8eaf6 !important;
+  --tertiary-medium: var(--ame-navy) !important;
+  --tertiary-high: #3949ab !important;
+  --quaternary: var(--ame-red) !important;
+  --highlight: var(--gray-100) !important;
 }
 
 /* === REMOVE HERO SECTION === */
@@ -50,34 +46,33 @@
   display: none !important;
 }
 
-/* === IMPACTFUL KNOWLEDGE QUOTE BANNER === */
+/* === PROFESSIONAL KNOWLEDGE QUOTE BANNER === */
 .ame-knowledge-quote-banner {
-  background: linear-gradient(135deg, var(--ame-purple-primary), var(--ame-purple-dark));
-  border-bottom: 3px solid var(--ame-purple-bright);
-  padding: 16px 24px;
+  background: var(--ame-navy);
+  border-left: 4px solid var(--ame-red);
+  padding: 14px 24px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(50, 28, 112, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 
   .quote-content {
     color: rgba(255, 255, 255, 0.95);
-    font-size: 15px;
+    font-size: 14px;
     font-style: italic;
-    font-weight: 600;
-    letter-spacing: 0.3px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
     transition: opacity 0.3s ease;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
 }
 
-/* === HEADER WITH AME BRANDING === */
+/* === HEADER - CLEAN & PROFESSIONAL === */
 .d-header {
   background: var(--bg-primary);
-  border-bottom: 2px solid var(--ame-purple-primary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .d-header .title a {
-  color: var(--ame-purple-primary);
+  color: var(--ame-black);
   font-weight: 700;
 }
 
@@ -85,24 +80,37 @@
   color: var(--gray-600);
 
   &:hover {
-    color: var(--ame-purple-bright);
+    color: var(--ame-navy);
   }
 }
 
-/* === CUSTOM SEARCH BANNER - AME BRANDED === */
+/* === FULL-WIDTH LAYOUT === */
+.wrap {
+  max-width: 100% !important;
+  padding: 0 2rem !important;
+}
+
+#main-outlet {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* === WELCOME/SEARCH BANNER - CLEAN PROFESSIONAL === */
 .custom-search-banner-wrap,
 .custom-search-banner {
-  background: linear-gradient(135deg, rgba(50, 28, 112, 0.03), rgba(139, 92, 246, 0.05)) !important;
-  background-image: linear-gradient(135deg, rgba(50, 28, 112, 0.03), rgba(139, 92, 246, 0.05)) !important;
-  border: 2px solid var(--ame-purple-primary) !important;
-  border-radius: 12px !important;
+  background: var(--bg-primary) !important;
+  background-image: none !important;
+  border: 1px solid var(--border-color) !important;
+  border-left: 4px solid var(--ame-navy) !important;
+  border-radius: 4px !important;
   padding: 2rem !important;
-  box-shadow: 0 4px 16px rgba(50, 28, 112, 0.1) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
   margin: 1.5rem 0 !important;
 
   h1, h2 {
-    color: var(--ame-purple-primary) !important;
-    font-weight: 800 !important;
+    color: var(--ame-black) !important;
+    font-weight: 700 !important;
     margin-bottom: 0.75rem !important;
   }
 
@@ -116,15 +124,16 @@
 .custom-search-banner input.search-input,
 .custom-search-banner .search-input {
   background: var(--bg-primary) !important;
-  border: 2px solid var(--ame-purple-primary) !important;
+  border: 1px solid var(--border-color) !important;
   color: var(--text-primary) !important;
-  border-radius: 8px !important;
-  padding: 14px 20px !important;
+  border-radius: 4px !important;
+  padding: 12px 16px !important;
   font-size: 15px !important;
+  transition: all 0.2s ease !important;
 
   &:focus {
-    border-color: var(--ame-purple-bright) !important;
-    box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15) !important;
+    border-color: var(--ame-navy) !important;
+    box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1) !important;
     outline: none !important;
   }
 
@@ -133,127 +142,112 @@
   }
 }
 
-/* === NAVIGATION PILLS - AME PURPLE === */
+/* === NAVIGATION PILLS - PROFESSIONAL === */
 .nav-pills > li > a,
 .nav-pills > li.active > a {
   color: var(--text-secondary);
-  border-radius: 8px;
-  padding: 10px 18px;
+  border-radius: 4px;
+  padding: 8px 16px;
   font-weight: 600;
   transition: all 0.2s ease;
 
   &:hover {
-    background: rgba(139, 92, 246, 0.1);
-    color: var(--ame-purple-bright);
+    background: rgba(26, 35, 126, 0.08);
+    color: var(--ame-navy);
   }
 
   &.active {
-    background: var(--ame-purple-primary) !important;
+    background: var(--ame-navy) !important;
     color: white !important;
   }
 }
 
-/* === BUTTONS - AME PURPLE === */
+/* === BUTTONS - NAVY PRIMARY, RED ACCENTS === */
 .btn-primary,
 #create-topic,
 button.btn-primary {
-  background: var(--ame-purple-primary) !important;
+  background: var(--ame-navy) !important;
   background-image: none !important;
   color: white !important;
   border: none !important;
-  border-radius: 8px !important;
-  padding: 12px 24px !important;
-  font-weight: 700 !important;
+  border-radius: 4px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
   font-size: 14px !important;
   transition: all 0.2s ease !important;
 
   &:hover {
-    background: var(--ame-purple-bright) !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(50, 28, 112, 0.3) !important;
+    background: #3949ab !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
   }
 }
 
 .btn-default,
 .btn {
   background: var(--bg-primary);
-  border: 2px solid var(--ame-purple-primary);
-  color: var(--ame-purple-primary);
-  border-radius: 8px;
-  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 4px;
+  padding: 8px 16px;
   font-weight: 600;
   font-size: 14px;
   transition: all 0.2s ease;
 
   &:hover {
-    background: var(--ame-purple-primary);
-    color: white;
+    border-color: var(--ame-navy);
+    color: var(--ame-navy);
   }
 }
 
-/* === CATEGORY BOXES - AME BRANDED === */
+/* === CATEGORY BOXES - CLEAN INDUSTRIAL === */
 .category-boxes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin: 2rem 0;
 }
 
 .category-box {
   background: var(--bg-primary);
-  border: 2px solid var(--ame-purple-primary);
-  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--ame-navy);
+  border-radius: 4px;
   padding: 1.5rem;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--ame-purple-bright), var(--ame-purple-primary));
-  }
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(50, 28, 112, 0.2);
-    border-color: var(--ame-purple-bright);
+    border-left-color: var(--ame-red);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 
   .category-box-heading {
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 700;
-    color: var(--ame-purple-primary);
-    margin-bottom: 0.75rem;
-    padding-left: 1rem;
+    color: var(--ame-black);
+    margin-bottom: 0.5rem;
   }
 
   .category-description {
     font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.6;
-    padding-left: 1rem;
   }
 }
 
 /* === CATEGORY LIST === */
 .category-list-item {
   background: var(--bg-primary);
-  border: 2px solid var(--gray-200);
-  border-left: 5px solid var(--ame-purple-primary);
-  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--ame-navy);
+  border-radius: 4px;
   margin-bottom: 1rem;
-  padding: 1.5rem;
+  padding: 1.25rem;
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: var(--ame-purple-bright);
-    box-shadow: 0 4px 16px rgba(50, 28, 112, 0.12);
-    transform: translateX(4px);
+    border-left-color: var(--ame-red);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   }
 }
 
@@ -261,7 +255,7 @@ button.btn-primary {
 .topic-list {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .topic-list-item {
@@ -269,7 +263,7 @@ button.btn-primary {
   transition: background 0.2s ease;
 
   &:hover {
-    background: rgba(139, 92, 246, 0.04);
+    background: rgba(26, 35, 126, 0.03);
   }
 
   &:last-child {
@@ -277,47 +271,48 @@ button.btn-primary {
   }
 }
 
-/* === LINKS - AME PURPLE === */
+/* === LINKS - NAVY PRIMARY === */
 a {
-  color: var(--ame-purple-bright);
+  color: var(--ame-navy);
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: var(--ame-purple-primary);
+    color: #3949ab;
   }
 }
 
 /* === BADGES AND TAGS === */
 .badge-wrapper.bullet .badge-category-bg {
-  background: var(--ame-purple-primary) !important;
+  background: var(--ame-navy) !important;
 }
 
 .badge-wrapper.bullet .badge-category {
-  color: var(--ame-purple-bright) !important;
+  color: var(--ame-navy) !important;
 }
 
 .discourse-tag,
 .discourse-tags .discourse-tag {
-  background: rgba(139, 92, 246, 0.1) !important;
-  color: var(--ame-purple-primary) !important;
-  border: 1px solid var(--ame-purple-bright) !important;
-  border-radius: 6px !important;
-  padding: 5px 12px !important;
+  background: rgba(26, 35, 126, 0.08) !important;
+  color: var(--ame-navy) !important;
+  border: 1px solid rgba(26, 35, 126, 0.2) !important;
+  border-radius: 3px !important;
+  padding: 4px 10px !important;
   font-size: 12px !important;
   font-weight: 600 !important;
+  transition: all 0.2s ease !important;
 
   &:hover {
-    background: var(--ame-purple-primary) !important;
+    background: var(--ame-navy) !important;
     color: white !important;
   }
 }
 
-/* === SIDEBAR - AME BRANDING === */
+/* === SIDEBAR - CLEAN === */
 .sidebar-section-wrapper {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: 4px;
   padding: 1rem;
   margin-bottom: 1rem;
 }
@@ -325,16 +320,16 @@ a {
 .sidebar-section-link {
   color: var(--text-secondary);
   padding: 0.5rem;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: all 0.2s ease;
 
   &:hover {
-    background: rgba(139, 92, 246, 0.1);
-    color: var(--ame-purple-bright);
+    background: rgba(26, 35, 126, 0.06);
+    color: var(--ame-navy);
   }
 
   &.active {
-    background: var(--ame-purple-primary);
+    background: var(--ame-navy);
     color: white;
     font-weight: 600;
   }
@@ -342,22 +337,23 @@ a {
 
 /* === CATEGORY HEADER === */
 .category-heading {
-  background: linear-gradient(135deg, rgba(50, 28, 112, 0.05), rgba(139, 92, 246, 0.08));
-  border: 2px solid var(--ame-purple-primary);
-  border-radius: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--ame-navy);
+  border-radius: 4px;
   padding: 2rem;
   margin-bottom: 1.5rem;
 
   h1 {
-    color: var(--ame-purple-primary);
-    font-weight: 800;
+    color: var(--ame-black);
+    font-weight: 700;
     margin-bottom: 0.75rem;
   }
 
   .category-description {
     color: var(--text-secondary);
-    font-size: 16px;
-    line-height: 1.7;
+    font-size: 15px;
+    line-height: 1.6;
   }
 }
 
@@ -365,22 +361,27 @@ a {
 .topic-post {
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
 
   article.boxed {
     background: transparent;
   }
 }
 
-/* === CODE BLOCKS === */
+/* === CODE BLOCKS - TECHNICAL === */
 pre code,
 code {
   background: var(--gray-100);
   border: 1px solid var(--border-color);
-  border-radius: 4px;
-  color: var(--ame-purple-dark);
+  border-radius: 3px;
+  color: var(--gray-900);
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+}
+
+pre {
+  border-left: 3px solid var(--ame-navy);
 }
 
 /* === REMOVE MINT DECORATIONS === */
@@ -394,7 +395,7 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid var(--ame-purple-bright);
+  outline: 2px solid var(--ame-navy);
   outline-offset: 2px;
 }
 
@@ -427,12 +428,24 @@ body.theme-dark {
 
   .d-header {
     background: var(--gray-900);
-    border-bottom-color: var(--ame-purple-bright);
+    border-bottom-color: var(--ame-navy);
+  }
+
+  .ame-knowledge-quote-banner {
+    background: #1a237e;
+    border-left-color: var(--ame-red);
   }
 
   .custom-search-banner-wrap,
   .custom-search-banner {
-    background: linear-gradient(135deg, rgba(50, 28, 112, 0.2), rgba(139, 92, 246, 0.15)) !important;
-    border-color: var(--ame-purple-bright) !important;
+    background: var(--gray-800) !important;
+    border-color: var(--gray-700) !important;
+    border-left-color: #5c6bc0 !important;
+  }
+
+  pre code,
+  code {
+    background: var(--gray-800);
+    color: var(--gray-100);
   }
 }
