@@ -56,33 +56,40 @@ body,
   background-image: none !important;
 }
 
-/* === CLEAN PROFESSIONAL HERO SECTION === */
+/* === PROFESSIONAL HERO WITH BACKGROUND IMAGE === */
 .ame-hero-section {
-  background: #F9FAFB !important;
-  background-image: none !important;
-  background-color: #F9FAFB !important;
-  border-left: 4px solid #1e3a8a !important;
+  /* Background Image - Replace URL with your tech imagery */
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.92), rgba(17, 24, 39, 0.88)),
+              url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1600') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: #1e3a8a !important;
+
+  padding: 4rem 2rem !important;
+  margin: 0 !important;
   border: none !important;
-  border-left: 4px solid #1e3a8a !important;
-  padding: 3rem 2rem !important;
-  margin: 0 0 2rem 0 !important;
   box-shadow: none !important;
+  position: relative !important;
 }
 
 .ame-hero-content {
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .ame-hero-title {
-  font-size: 32px !important;
+  font-size: 48px !important;
   font-weight: 700 !important;
-  color: #000000 !important;
-  margin-bottom: 0.5rem !important;
-  letter-spacing: -1px !important;
+  color: #ffffff !important;
+  margin-bottom: 0.75rem !important;
+  letter-spacing: -1.5px !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
 
   .highlight {
-    color: #1e3a8a !important;
+    color: #60a5fa !important;
     font-weight: 700 !important;
   }
 }
@@ -90,16 +97,17 @@ body,
 .ame-hero-title .highlight,
 .ame-hero-section .highlight,
 span.highlight {
-  color: #1e3a8a !important;
+  color: #60a5fa !important;
   background: none !important;
   background-color: transparent !important;
 }
 
 .ame-hero-subtitle {
-  font-size: 16px !important;
-  color: #4B5563 !important;
-  margin-bottom: 2rem !important;
+  font-size: 18px !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  margin-bottom: 2.5rem !important;
   font-weight: 400 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .ame-hero-search {
@@ -149,40 +157,45 @@ span.highlight {
   display: inline-flex !important;
   align-items: center !important;
   gap: 0.5rem !important;
-  padding: 10px 20px !important;
-  font-size: 14px !important;
+  padding: 12px 24px !important;
+  font-size: 15px !important;
   font-weight: 600 !important;
   text-decoration: none !important;
-  border-radius: 0 !important;
+  border-radius: 4px !important;
   transition: all 0.2s ease !important;
   border: none !important;
 
   &.ame-btn-primary {
-    background: #1e3a8a !important;
-    background-color: #1e3a8a !important;
-    background-image: none !important;
-    color: white !important;
-    border: none !important;
-
-    &:hover {
-      background: #1e40af !important;
-      background-color: #1e40af !important;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-      color: white !important;
-    }
-  }
-
-  &.ame-btn-secondary {
     background: #ffffff !important;
     background-color: #ffffff !important;
     background-image: none !important;
     color: #1e3a8a !important;
-    border: 1px solid #1e3a8a !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
 
     &:hover {
-      background: #1e3a8a !important;
-      background-color: #1e3a8a !important;
-      color: white !important;
+      background: #f3f4f6 !important;
+      background-color: #f3f4f6 !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+      color: #1e3a8a !important;
+    }
+  }
+
+  &.ame-btn-secondary {
+    background: rgba(255, 255, 255, 0.1) !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(10px) !important;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2) !important;
+      background-color: rgba(255, 255, 255, 0.2) !important;
+      border-color: rgba(255, 255, 255, 0.5) !important;
+      color: #ffffff !important;
+      transform: translateY(-1px) !important;
     }
   }
 }
