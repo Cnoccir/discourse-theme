@@ -1,0 +1,16 @@
+# AME TechAssist Theme Settings
+
+show_hero_on_homepage:
+  type: bool
+  default: true
+  description: "Show the hero section on the homepage"
+
+hero_search_placeholder:
+  type: string
+  default: "Search documentation or ask a technical question..."
+  description: "Placeholder text for the hero search bar"
+
+enable_tech_grid_background:
+  type: bool
+  default: true
+  description: "Enable the technical grid background pattern on hero"
