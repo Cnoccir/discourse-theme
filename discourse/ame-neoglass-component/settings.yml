@@ -1,39 +1,89 @@
-enable_neo_glass_homepage:
+enable_glass:
   type: bool
   default: true
-  description: "Enable Neo-Glassmorphism homepage with hero section and category cards"
+  description: "Enable glassmorphism effect (backdrop blur) on main area and sidebar"
 
-hero_background_image:
+background_image:
+  type: upload
+  default: ""
+  description: "Background image used behind content (full screen)"
+
+header_label:
   type: string
-  default: "/Background-Lgin-Landing.png"
-  description: "URL or path to the hero background image"
+  default: "TechAssist"
+  description: "Optional text appended to the header title (e.g., after the logo)"
 
-login_background_image:
-  type: string
-  default: "/Background-Lgin-Landing.png"
-  description: "URL or path to the login page background image"
-
-enable_inspiration_block:
+use_inter_font:
   type: bool
   default: true
-  description: "Enable rotating inspiration quotes block on homepage"
+  description: "Use Inter font (free alternative to Aktiv Grotesk)"
+
+logo_url:
+  type: string
+  default: ""
+  description: "Optional URL to override the header logo image (otherwise use site setting)"
+
+small_logo_url:
+  type: string
+  default: ""
+  description: "Optional URL to override the small header logo image"
+
+enable_hero_banner:
+  type: bool
+  default: true
+  description: "Insert a hero banner on the homepage"
 
 hero_title:
   type: string
   default: "TRANSFERRING KNOWLEDGE TO BUILD OUR COLLECTIVE FUTURE"
-  description: "Main hero section title"
+  description: "Hero banner title"
 
 hero_subtitle:
   type: string
   default: "Together We Know More"
-  description: "Hero section subtitle/slogan"
+  description: "Hero banner subtitle"
 
-glass_opacity:
-  type: float
-  default: 0.15
-  description: "Opacity for glassmorphic elements (0.1 - 0.3 recommended)"
+enable_category_cards:
+  type: bool
+  default: true
+  description: "Show category cards beneath the hero banner"
 
-glass_blur:
-  type: integer
-  default: 15
-  description: "Blur amount in pixels for glassmorphic effect (10-20 recommended)"
+card_1_title:
+  type: string
+  default: "Knowledge Base"
+card_1_url:
+  type: string
+  default: "/c/knowledge-base"
+card_1_icon:
+  type: string
+  default: "fa-book"
+
+card_2_title:
+  type: string
+  default: "Tech Community"
+card_2_url:
+  type: string
+  default: "/c/tech-community"
+card_2_icon:
+  type: string
+  default: "fa-users"
+
+card_3_title:
+  type: string
+  default: "How-To & Troubleshooting"
+card_3_url:
+  type: string
+  default: "/c/how-to"
+card_3_icon:
+  type: string
+  default: "fa-wrench"
+
+card_4_title:
+  type: string
+  default: "AI Assistant"
+card_4_url:
+  type: string
+  default: "/c/ai-assistant"
+card_4_icon:
+  type: string
+  default: "fa-robot"

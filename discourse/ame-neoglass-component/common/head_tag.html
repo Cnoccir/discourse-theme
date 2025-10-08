@@ -1,34 +1,76 @@
-<!-- AME Neo-Glass Theme Component -->
-<!-- Preload fonts and assets for better performance -->
+<!-- Head tags and global variables for AME Freeletics Dark Theme -->
 
+<%# Load Inter font if enabled %>
+<% if settings.use_inter_font %>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Optional: Add custom font if needed -->
-<!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<% end %>
 
 <style>
-  /* Preload animation to prevent FOUC */
-  body.ame-neoglass-theme {
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
+  :root {
+    /* Background image variable from theme setting */
+    --background-image: url('<%= settings.background_image || "" %>');
+    --use-glass: <%= settings.enable_glass ? "1" : "0" %>;
+
+    /* Typography (fallback to system if Inter disabled) */
+    --font-family: <%= settings.use_inter_font ? "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" %>;
+    --heading-font-family: var(--font-family);
   }
 
-  body.ame-neoglass-theme.loaded {
-    opacity: 1;
+  /* Header label with ERB content directly */
+  .d-header .title a::after {
+    <% if (settings.header_label && settings.header_label.strip.length > 0) %>
+    content: "<%= settings.header_label %>";
+    position: absolute;
+    left: calc(100% + 9px);
+    top: 8px;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: 500;
+    white-space: nowrap;
+    border-left: 1px solid rgba(255,255,255,0.8);
+    padding-left: 8px;
+    <% else %>
+    content: '';
+    <% end %>
   }
+  /* Optional logo override via settings */
+  <% if (settings.logo_url && settings.logo_url.strip.length > 0) { %>
+  :root { --theme-logo-url: url('<%= settings.logo_url %>'); }
+  <% } %>
+  <% if (settings.small_logo_url && settings.small_logo_url.strip.length > 0) { %>
+  :root { --theme-small-logo-url: url('<%= settings.small_logo_url %>'); }
+  <% } %>
 </style>
 
 <script>
-  // Mark body as loaded after DOM ready
-  document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-      document.body.classList.add('loaded');
-    }, 100);
-  });
-</script>
+  (function() {
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle glass effect class on body (reliable CSS hook)
+      try {
+        if (<%= settings.enable_glass ? 'true' : 'false' %>) {
+          document.body.classList.add('ame-glass-enabled');
+        } else {
+          document.body.classList.remove('ame-glass-enabled');
+        }
+      } catch (e) { /* no-op */ }
 
-<!-- Meta tags for better mobile experience -->
-<meta name="theme-color" content="#00508C">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      // Override logo src if provided
+      try {
+        var logoEl = document.querySelector('#site-logo');
+        if (logoEl && '<%= settings.logo_url %>') {
+          if ('<%= settings.logo_url %>'.trim().length > 0) {
+            logoEl.src = '<%= settings.logo_url %>';
+          }
+        }
+        var smallLogoEl = document.querySelector('#site-logo-small');
+        if (smallLogoEl && '<%= settings.small_logo_url %>') {
+          if ('<%= settings.small_logo_url %>'.trim().length > 0) {
+            smallLogoEl.src = '<%= settings.small_logo_url %>';
+          }
+        }
+      } catch (e) { /* no-op */ }
+    });
+  })();
+</script>

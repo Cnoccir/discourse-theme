@@ -1,26 +1,23 @@
 {
-  "name": "AME Neo-Glass Theme Component",
-  "component": true,
+  "name": "AME Freeletics Dark Theme",
+  "component": false,
   "about_url": "https://ame-techassist.com",
   "license_url": null,
   "authors": "AME Service Group",
   "theme_version": "1.0.0",
   "minimum_discourse_version": "3.0.0",
-  "about": "Next-generation Neo-Glassmorphism theme component for AME-TechAssist. Features dynamic glassmorphic UI, futuristic design with AME branding. Designed to layer on top of Discourse Horizon theme.",
   "color_schemes": {
-    "AME Neo-Glass": {
-      "primary": "2C3E50",
-      "secondary": "F0F4F8",
-      "tertiary": "00508C",
-      "quaternary": "00BFFF",
-      "header_background": "F0F4F8",
-      "header_primary": "00508C",
-      "highlight": "E8F4F8",
-      "danger": "dc2626",
-      "success": "059669",
-      "love": "00BFFF",
-      "selected": "E8F4F8",
-      "hover": "D1E7F0"
+    "AME Freeletics Dark": {
+      "primary": "ECEFF1",
+      "secondary": "263238",
+      "tertiary": "003d6b",
+      "quaternary": "0078d4",
+      "header_background": "263238",
+      "header_primary": "ECEFF1",
+      "highlight": "FFB36B",
+      "danger": "FF3333",
+      "success": "00A1A1",
+      "love": "FF3333"
     }
   }
 }

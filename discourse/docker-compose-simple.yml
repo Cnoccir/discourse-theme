@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    container_name: discourse_postgres
+    environment:
+      POSTGRES_USER: discourse
+      POSTGRES_PASSWORD: discourse
+      POSTGRES_DB: discourse
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - discourse_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: discourse_redis
+    networks:
+      - discourse_network
+
+  discourse:
+    image: discourse/discourse:latest
+    container_name: discourse_web
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      DISCOURSE_HOSTNAME: localhost:4000
+      DISCOURSE_DEVELOPER_EMAILS: admin@localhost.local
+      DISCOURSE_DB_HOST: postgres
+      DISCOURSE_DB_NAME: discourse
+      DISCOURSE_DB_USERNAME: discourse
+      DISCOURSE_DB_PASSWORD: discourse
+      DISCOURSE_REDIS_HOST: redis
+      # Skip setup wizard
+      DISCOURSE_SKIP_INITIAL_WIZARD: "true"
+      # Basic settings
+      DISCOURSE_ENABLE_CORS: "true"
+      DISCOURSE_FORCE_HTTPS: "false"
+      DISCOURSE_SMTP_ADDRESS: ""
+      DISCOURSE_SMTP_PORT: ""
+    ports:
+      - "4000:80"
+    volumes:
+      - ./ame-neoglass-component:/var/www/discourse/app/assets/javascripts/discourse/theme-components/ame-neoglass-component
+      - discourse_data:/shared
+    networks:
+      - discourse_network
+    command: /sbin/boot
+
+volumes:
+  postgres_data:
+  discourse_data:
+
+networks:
+  discourse_network:
+    driver: bridge

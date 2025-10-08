@@ -43,6 +43,10 @@ build/
 tmp/
 temp/
 
+# Docker
+docker-compose.override.yml
+.env
+
 # Other Projects (keep only theme components)
 ../BQL_Query_Builder/
 ../TridumPwdCracker/
